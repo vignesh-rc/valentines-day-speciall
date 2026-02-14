@@ -1,0 +1,450 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    color: #fff0f7;
+    overflow-x: hidden;
+}
+
+/* ================= PAGE COLOR THEMES ================= */
+
+/* Intro Page - Pink */
+.intro-page {
+    background: linear-gradient(135deg, #ffb6d9, #ff85c2, #ff5fa9);
+}
+
+/* Home Page - Vibrant Purple */
+.home-page {
+    background: linear-gradient(135deg, #a855f7, #d946ef, #ec4899);
+}
+
+/* About Page - Teal/Cyan */
+.about-page {
+    background: linear-gradient(135deg, #06b6d4, #0891b2, #0d9488);
+}
+
+/* Memories Page - Deep Indigo */
+.memories-page {
+    background: linear-gradient(135deg, #6366f1, #4f46e5, #4338ca);
+}
+
+/* Letter Page - Warm Orange */
+.letter-page {
+    background: linear-gradient(135deg, #fb923c, #f97316, #ea580c);
+}
+
+/* Smooth animation */
+* {
+    transition: all 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+/* ================= TEXT ================= */
+
+h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+h2 {
+    color: #ffe3f1;
+}
+
+p {
+    color: #ffeaf5;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* Gradient highlight */
+.highlight {
+    background: linear-gradient(90deg, #ffffff, #ffd1ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* ================= INTRO ================= */
+
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.glow-btn {
+    margin-top: 40px;
+    padding: 18px 55px;
+    border-radius: 50px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    background: white;
+    color: #ff4fa3;
+    cursor: pointer;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.glow-btn:hover {
+    transform: scale(1.08);
+}
+
+/* ================= NAV ================= */
+
+nav {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+    padding: 15px 40px;
+    border-radius: 40px;
+    backdrop-filter: blur(30px);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* keep nav from overflowing small screens and allow wrapping */
+nav {
+    max-width: calc(100% - 40px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 20px;
+    text-align: center;
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass {
+    backdrop-filter: blur(40px);
+    background: rgba(255,255,255,0.18);
+    border-radius: 35px;
+    padding: 50px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 20px;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.4),
+        inset 0 0 40px rgba(255,255,255,0.3);
+}
+
+/* ================= GRID ================= */
+
+.grid {
+    margin-top: 50px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    padding: 30px;
+    border-radius: 30px;
+    backdrop-filter: blur(40px);
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ================= SPOTIFY PLAYER ================= */
+
+.player {
+    width: 350px;
+    padding: 30px;
+    border-radius: 30px;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(40px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.player h2 {
+    color: #ffffff;
+}
+
+.player p {
+    color: #cfcfcf;
+    margin-bottom: 20px;
+}
+
+audio {
+    width: 100%;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff85c2, #ff5fa9);
+    width: 0%;
+    border-radius: 10px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #cfcfcf;
+}
+
+/* ================= PLAYER CONTROLS ================= */
+
+.player-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.play-btn,
+.pause-btn,
+.resume-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff85c2, #ff5fa9);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.play-btn:hover,
+.pause-btn:hover,
+.resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.play-btn:active,
+.pause-btn:active,
+.resume-btn:active {
+    transform: translateY(0);
+}
+
+/* ================= FADE ANIMATION ================= */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================= FLOATING HEARTS ================= */
+
+.heart {
+    position: fixed;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* ================= RESPONSIVE MOBILE ================= */
+
+@media (max-width: 768px) {
+    
+    /* Section adjustments */
+    .section {
+        min-height: auto;
+        padding: 80px 20px 60px 20px;
+    }
+
+    .player-section {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    /* Player styling for mobile */
+    .player {
+        width: 100%;
+        padding: 20px;
+        max-width: 400px;
+    }
+
+    .player h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    /* Controls responsive */
+    .player-controls {
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .play-btn,
+    .pause-btn,
+    .resume-btn {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Text adjustments */
+    h1 {
+        font-size: clamp(28px, 5vw, 50px);
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Navigation mobile */
+    nav {
+        gap: 12px;
+        padding: 10px 14px;
+        font-size: 14px;
+        width: calc(100% - 28px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 24px;
+        justify-content: space-around;
+    }
+    nav a {
+        padding: 6px 8px;
+        border-radius: 8px;
+    }
+
+    /* Glass card mobile */
+    .glass {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    /* Grid cards mobile */
+    .grid {
+        gap: 20px;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Progress bar mobile */
+    .progress-container {
+        margin: 15px 0;
+    }
+
+    .time-info {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .section {
+        padding: 70px 15px 50px 15px;
+    }
+
+    .player-section {
+        padding: 50px 15px;
+    }
+
+    .player {
+        padding: 15px;
+    }
+
+    .player h2 {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: clamp(24px, 4vw, 40px);
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    nav {
+        gap: 10px;
+        padding: 8px 12px;
+        font-size: 12px;
+        width: calc(100% - 20px);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 18px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    nav a {
+        padding: 6px 8px;
+        border-radius: 6px;
+    }
+
+    .glass {
+        padding: 20px 15px;
+    }
+
+    .play-btn,
+    .pause-btn,
+    .resume-btn {
+        padding: 10px 18px;
+        font-size: 12px;
+    }
+}
